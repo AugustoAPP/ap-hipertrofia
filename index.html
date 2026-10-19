@@ -2,15 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta id="mainViewport" name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!/iPhone|iPod|Android.*Mobile/i.test(navigator.userAgent)) {
+      document.getElementById('mainViewport').setAttribute('content', 'width=1280');
+    }
+  </script
   <meta name="theme-color" content="#050c16">
   <title>AP • Hipertrofia Inteligente | Coaching & Biomecánica Aplicada</title>
 
- <!-- FAVICON OFICIAL AP (FORZADO PARA CELULAR Y PC) -->
-  <link rel="icon" type="image/jpeg" sizes="32x32" href="/logo.jpg?v=2">
-  <link rel="icon" type="image/jpeg" sizes="192x192" href="/logo.jpg?v=2">
-  <link rel="shortcut icon" type="image/jpeg" href="/logo.jpg?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/logo.jpg?v=2">
+  <!-- FAVICON INCRUSTRADO DIRECTO PARA CELULARES Y PC (NUNCA MUESTRA EL MUNDITO) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23081526' stroke='%23d4af37' stroke-width='6'/%3E%3Ctext x='50%25' y='67%25' text-anchor='middle' fill='%23d4af37' font-family='Arial,sans-serif' font-weight='900' font-size='50' letter-spacing='-2'%3EAP%3C/text%3E%3C/svg%3E">
+  <link rel="apple-touch-icon" href="logo.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1447,7 +1450,7 @@
       }
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 960px) {
       .hero-grid,
       .ecosystem-grid,
       .about-grid,
