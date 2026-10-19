@@ -7,13 +7,14 @@
     if (!/iPhone|iPod|Android.*Mobile/i.test(navigator.userAgent)) {
       document.getElementById('mainViewport').setAttribute('content', 'width=1280');
     }
-  </script
+  </script>
   <meta name="theme-color" content="#050c16">
   <title>AP • Hipertrofia Inteligente | Coaching & Biomecánica Aplicada</title>
 
-  <!-- FAVICON INCRUSTRADO DIRECTO PARA CELULARES Y PC (NUNCA MUESTRA EL MUNDITO) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23081526' stroke='%23d4af37' stroke-width='6'/%3E%3Ctext x='50%25' y='67%25' text-anchor='middle' fill='%23d4af37' font-family='Arial,sans-serif' font-weight='900' font-size='50' letter-spacing='-2'%3EAP%3C/text%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="logo.jpg">
+  <!-- FAVICON OFICIAL (EL LOGO DE LA DERECHA: TU ARCHIVO LOGO.JPG) -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg?v=4">
+  <link rel="shortcut icon" type="image/jpeg" href="logo.jpg?v=4">
+  <link rel="apple-touch-icon" href="logo.jpg?v=4">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -701,7 +702,7 @@
       margin-bottom: 1.35rem;
     }
 
-    /* PLANILLA UI (ADAPTABLE AL 100% EN CELULAR SIN SCROLL RARO) */
+    /* PLANILLA UI */
     .sheets-ui {
       background: #06101e;
       border: 1px solid rgba(255,255,255,0.12);
@@ -1097,7 +1098,7 @@
       background: rgba(212, 175, 55, 0.15);
     }
 
-    /* COMPARISON TABLE (SIN DESBORDE EN CELULAR) */
+    /* COMPARISON TABLE */
     .comp-wrapper {
       max-width: 920px;
       margin: 0 auto;
@@ -1442,7 +1443,7 @@
     }
 
     /* ==========================================================
-       DISEÑO EXCLUSIVO PARA CELULARES (ESPACIADO Y DISTRIBUCIÓN PRO)
+       DISEÑO RESPONSIVE (TABLETS Y CELULARES)
        ========================================================== */
     @media (max-width: 1080px) {
       .steps-grid {
@@ -1480,7 +1481,6 @@
         letter-spacing: 0.5px;
       }
 
-      /* Menú Desplegable Celular */
       .menu-toggle {
         display: flex;
       }
@@ -1521,7 +1521,6 @@
         font-size: 0.9rem;
       }
 
-      /* Hero Centrado y Aireado en Celular */
       .hero {
         padding: 2.4rem 0 3.4rem;
       }
@@ -1554,7 +1553,6 @@
         width: 100%;
       }
 
-      /* Estadísticas en 3 tarjetas limpias */
       .hero-stats {
         grid-template-columns: repeat(3, 1fr);
         gap: 0.55rem;
@@ -1577,7 +1575,6 @@
         line-height: 1.25;
       }
 
-      /* Tarjeta Showcase del Hero en Celular */
       .hero-showcase {
         padding: 1.9rem 1.15rem 1.35rem;
       }
@@ -1597,7 +1594,6 @@
         padding: 0.18rem 0.45rem;
       }
 
-      /* Tarjetas y Grillas con buen aire */
       .deliverables-mini-grid,
       .steps-grid,
       .about-pillars {
@@ -1614,7 +1610,6 @@
         padding: 1.65rem 1.25rem;
       }
 
-      /* Planilla Google Sheets adaptada al celular sin scroll lateral */
       .sheets-table th.hide-mobile,
       .sheets-table td.hide-mobile {
         display: none;
@@ -1626,14 +1621,12 @@
         padding: 0.65rem 0.6rem;
       }
 
-      /* Librería de Ejecución en Celular */
       .lib-row {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
       }
 
-      /* Sobre Mí en Celular */
       .coach-frame {
         max-width: 350px;
         margin: 0 auto;
@@ -1667,7 +1660,6 @@
         font-size: 0.78rem;
       }
 
-      /* Tabla Comparativa 100% visible en pantalla móvil */
       .comp-table th, .comp-table td {
         padding: 0.75rem 0.55rem;
         font-size: 0.78rem;
@@ -1678,7 +1670,6 @@
         letter-spacing: 0.3px;
       }
 
-      /* Pasos en Celular (Número + Título en la misma línea) */
       .step-card {
         padding: 1.35rem 1.2rem;
       }
@@ -1699,7 +1690,6 @@
         font-size: 0.98rem;
       }
 
-      /* FAQs y Cierre Final */
       .faq-question {
         padding: 1.05rem 1.1rem;
         font-size: 0.88rem;
