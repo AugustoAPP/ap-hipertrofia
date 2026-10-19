@@ -9,7 +9,7 @@
     }
   </script>
   <meta name="theme-color" content="#050c16">
-  <title>AP • Hipertrofia Inteligente | Coaching & Biomecánica Aplicada</title>
+  <title>AP • Hipertrofia Inteligente | Augusto Abello</title>
 
   <!-- FAVICON OFICIAL (EL LOGO DE LA DERECHA: TU ARCHIVO LOGO.JPG) -->
   <link rel="icon" type="image/jpeg" href="logo.jpg?v=4">
@@ -65,8 +65,8 @@
       width: 100%;
       position: relative;
       background-image: 
-        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 85% 30%, rgba(16, 48, 87, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.07) 0%, transparent 40%),
+        radial-gradient(circle at 85% 30%, rgba(16, 48, 87, 0.45) 0%, transparent 45%),
         linear-gradient(180deg, #071322 0%, #050c16 100%);
     }
 
@@ -98,8 +98,8 @@
       pointer-events: none;
       z-index: 0;
       background-image: 
-        linear-gradient(to right, rgba(212, 175, 55, 0.025) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(212, 175, 55, 0.025) 1px, transparent 1px);
+        linear-gradient(to right, rgba(212, 175, 55, 0.022) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(212, 175, 55, 0.022) 1px, transparent 1px);
       background-size: 90px 90px;
     }
 
@@ -219,12 +219,12 @@
       vertical-align: middle;
     }
 
-    /* NAVBAR & MENÚ HAMBURGUESA */
+    /* NAVBAR */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(6, 15, 28, 0.94);
+      background: rgba(5, 12, 22, 0.92);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
@@ -359,17 +359,74 @@
       -webkit-text-fill-color: transparent;
     }
 
-    /* HERO SECTION */
+    /* ==========================================================
+       PORTADA HERO ESTILO FRANCO CURIA (FOTO FUNDIDA EN EL FONDO)
+       ========================================================== */
     .hero {
-      padding: 4.5rem 0 4rem;
       position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 2.8rem;
+      min-height: 84vh;
+      display: flex;
       align-items: center;
+      padding: 5rem 0 4.5rem;
+      background-color: #040912;
+      overflow: hidden;
+      border-top: none;
     }
+
+    /* Contenedor de tu foto a la derecha con fundido cinematográfico */
+    .hero-bg-visual {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 62%;
+      z-index: 1;
+      pointer-events: none;
+      overflow: hidden;
+      background: radial-gradient(circle at 65% 40%, rgba(212, 175, 55, 0.14) 0%, rgba(11, 28, 49, 0.7) 45%, #040912 85%);
+    }
+
+    .hero-bg-visual img.hero-person-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      display: block;
+      filter: contrast(1.06) brightness(0.92);
+    }
+
+    /* Monograma sutil de respaldo si todavía no subiste perfil.jpg */
+    .hero-bg-fallback {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 15%;
+      opacity: 0.22;
+    }
+    .hero-bg-fallback img {
+      max-width: 340px;
+      border-radius: 24px;
+      filter: drop-shadow(0 20px 50px rgba(0,0,0,0.8));
+    }
+
+    /* Degradado idéntico al de Franco Curia: funde la foto hacia el negro/azul a la izquierda y abajo */
+    .hero-bg-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(90deg, #040912 0%, rgba(4, 9, 18, 0.96) 16%, rgba(4, 9, 18, 0.55) 48%, rgba(4, 9, 18, 0.1) 80%, rgba(4, 9, 18, 0.4) 100%),
+        linear-gradient(0deg, #050c16 0%, rgba(5, 12, 22, 0.75) 15%, transparent 45%, rgba(4, 9, 18, 0.5) 100%);
+    }
+
+    .hero-content-left {
+      position: relative;
+      z-index: 3;
+      max-width: 660px;
+    }
+
     .hero-pill {
       display: inline-flex;
       align-items: center;
@@ -377,68 +434,85 @@
       gap: 0.5rem;
       padding: 0.45rem 1rem;
       border-radius: 999px;
-      background: rgba(212, 175, 55, 0.1);
+      background: rgba(212, 175, 55, 0.12);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
-      font-size: 0.73rem;
+      font-size: 0.74rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.1px;
-      margin-bottom: 1.25rem;
-      line-height: 1.35;
+      letter-spacing: 1.2px;
+      margin-bottom: 1.3rem;
+      backdrop-filter: blur(8px);
     }
+
     .hero h1 {
       font-family: var(--font-heading);
-      font-size: clamp(1.85rem, 4.2vw, 3.25rem);
+      font-size: clamp(2.2rem, 4.8vw, 3.85rem);
       font-weight: 900;
-      line-height: 1.14;
-      letter-spacing: -0.4px;
-      margin-bottom: 1.25rem;
+      line-height: 1.06;
+      letter-spacing: -0.6px;
+      margin-bottom: 0.9rem;
       text-transform: uppercase;
     }
+
+    .hero-subtitle-bar {
+      font-family: var(--font-heading);
+      font-size: clamp(0.88rem, 1.4vw, 1.05rem);
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 1.25rem;
+      display: block;
+    }
+
     .hero p.lead {
       color: var(--text-light);
-      font-size: clamp(0.96rem, 1.5vw, 1.06rem);
+      font-size: clamp(0.98rem, 1.5vw, 1.08rem);
       line-height: 1.65;
-      margin-bottom: 2rem;
-      max-width: 590px;
+      margin-bottom: 2.1rem;
+      max-width: 570px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
     }
+
     .hero-btns {
       display: flex;
-      gap: 0.9rem;
+      gap: 0.95rem;
       flex-wrap: wrap;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.4rem;
     }
+
     .btn-gold {
       background: var(--gold-gradient);
       color: #050c16;
-      padding: 1rem 1.8rem;
+      padding: 1.05rem 2rem;
       min-height: 52px;
       border-radius: 11px;
       font-family: var(--font-heading);
       font-weight: 800;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.7px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      box-shadow: 0 10px 28px rgba(212, 175, 55, 0.28);
+      box-shadow: 0 10px 28px rgba(212, 175, 55, 0.3);
       transition: all 0.25s;
       text-align: center;
     }
     .btn-gold:hover {
       background: var(--gold-gradient-hover);
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(212, 175, 55, 0.42);
+      box-shadow: 0 14px 34px rgba(212, 175, 55, 0.45);
     }
+
     .btn-outline {
-      background: rgba(13, 31, 54, 0.75);
+      background: rgba(13, 31, 54, 0.78);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
-      padding: 1rem 1.6rem;
+      padding: 1.05rem 1.7rem;
       min-height: 52px;
       border-radius: 11px;
       font-family: var(--font-heading);
@@ -452,22 +526,24 @@
       justify-content: center;
       text-align: center;
       transition: all 0.2s;
+      backdrop-filter: blur(6px);
     }
     .btn-outline:hover {
-      background: rgba(212, 175, 55, 0.12);
+      background: rgba(212, 175, 55, 0.14);
     }
 
     .hero-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 0.85rem;
+      gap: 0.9rem;
       padding-top: 1.4rem;
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      max-width: 560px;
     }
     .stat-box strong {
       display: block;
       font-family: var(--font-heading);
-      font-size: clamp(1rem, 2vw, 1.3rem);
+      font-size: clamp(1rem, 2vw, 1.28rem);
       font-weight: 900;
       color: var(--gold-light);
       line-height: 1.2;
@@ -475,13 +551,95 @@
     }
     .stat-box span {
       font-size: 0.74rem;
-      color: var(--text-muted);
+      color: var(--text-light);
       font-weight: 600;
       line-height: 1.3;
       display: block;
     }
 
-    /* HERO RIGHT: SHOWCASE CARD */
+    /* ==========================================================
+       SECCIÓN 2 (INMEDIATA): BIOGRAFÍA / QUIÉN SOY + ECOSISTEMA
+       ========================================================== */
+    .bio-section {
+      padding: 5rem 0;
+      border-top: 1px solid var(--border-gold);
+      background: linear-gradient(180deg, #06101e 0%, var(--bg-deep) 100%);
+    }
+    .bio-grid {
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-content h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.65rem, 3.2vw, 2.45rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      line-height: 1.16;
+    }
+    .about-content p {
+      color: var(--text-light);
+      margin-bottom: 1.05rem;
+      font-size: 0.96rem;
+      line-height: 1.65;
+    }
+    .coach-credentials-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.65rem;
+      margin: 1.4rem 0;
+    }
+    .cred-badge {
+      background: rgba(13, 31, 54, 0.9);
+      border: 1px solid var(--border-gold);
+      border-radius: 10px;
+      padding: 0.7rem 0.45rem;
+      text-align: center;
+    }
+    .cred-badge strong {
+      display: block;
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.76rem;
+      letter-spacing: 0.3px;
+      line-height: 1.2;
+    }
+    .cred-badge span {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      display: block;
+      margin-top: 0.18rem;
+      line-height: 1.2;
+    }
+    .about-pillars {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .pillar-box {
+      background: var(--bg-card);
+      border-left: 3px solid var(--gold-main);
+      padding: 0.95rem 1.05rem;
+      border-radius: 0 10px 10px 0;
+      text-align: left;
+    }
+    .pillar-box strong {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--gold-light);
+      margin-bottom: 0.25rem;
+    }
+    .pillar-box span {
+      font-size: 0.81rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      display: block;
+    }
+
+    /* SHOWCASE CARD A LA DERECHA DE LA BIOGRAFÍA */
     .hero-showcase {
       background: linear-gradient(160deg, #0f2440 0%, #081526 100%);
       border: 1.5px solid var(--border-gold);
@@ -518,8 +676,8 @@
       margin-bottom: 1.2rem;
     }
     .showcase-logo-center img {
-      width: 140px;
-      height: 140px;
+      width: 135px;
+      height: 135px;
       object-fit: cover;
       border-radius: 16px;
       border: 1.5px solid var(--border-gold);
@@ -854,113 +1012,6 @@
       font-size: 0.86rem;
       color: var(--text-muted);
       line-height: 1.55;
-    }
-
-    /* SOBRE MÍ / AUTORIDAD */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.88fr 1.12fr;
-      gap: 2.8rem;
-      align-items: center;
-    }
-    .coach-frame {
-      background: linear-gradient(145deg, #102542 0%, #071220 100%);
-      border: 2px solid var(--border-gold);
-      border-radius: 20px;
-      padding: 1.25rem;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-      width: 100%;
-    }
-    .coach-photo-placeholder {
-      width: 100%;
-      aspect-ratio: 4 / 4.2;
-      background: radial-gradient(circle at 50% 35%, #163256 0%, #071322 100%);
-      border-radius: 14px;
-      border: 1px solid var(--border-subtle);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.25rem;
-      overflow: hidden;
-      position: relative;
-    }
-    .coach-photo-placeholder img.coach-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-      z-index: 5;
-    }
-    .coach-credentials-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.55rem;
-      margin-top: 0.9rem;
-    }
-    .cred-badge {
-      background: rgba(5, 12, 22, 0.85);
-      border: 1px solid var(--border-gold);
-      border-radius: 10px;
-      padding: 0.55rem 0.35rem;
-      text-align: center;
-    }
-    .cred-badge strong {
-      display: block;
-      color: var(--gold-light);
-      font-family: var(--font-heading);
-      font-size: 0.72rem;
-      letter-spacing: 0.2px;
-      line-height: 1.2;
-    }
-    .cred-badge span {
-      font-size: 0.65rem;
-      color: var(--text-muted);
-      display: block;
-      margin-top: 0.15rem;
-      line-height: 1.2;
-    }
-    .about-content h2 {
-      font-family: var(--font-heading);
-      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      line-height: 1.16;
-    }
-    .about-content p {
-      color: var(--text-light);
-      margin-bottom: 1.05rem;
-      font-size: 0.95rem;
-      line-height: 1.65;
-    }
-    .about-pillars {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-    .pillar-box {
-      background: var(--bg-card);
-      border-left: 3px solid var(--gold-main);
-      padding: 0.95rem 1.05rem;
-      border-radius: 0 10px 10px 0;
-      text-align: left;
-    }
-    .pillar-box strong {
-      display: block;
-      font-size: 0.88rem;
-      color: var(--gold-light);
-      margin-bottom: 0.25rem;
-    }
-    .pillar-box span {
-      font-size: 0.81rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-      display: block;
     }
 
     /* PLANES / SERVICIOS */
@@ -1452,9 +1503,8 @@
     }
 
     @media (max-width: 960px) {
-      .hero-grid,
+      .bio-grid,
       .ecosystem-grid,
-      .about-grid,
       .vs-grid,
       .plans-grid {
         grid-template-columns: 1fr;
@@ -1469,8 +1519,8 @@
       .container {
         padding: 0 1.15rem;
       }
-      section {
-        padding: 3.8rem 0;
+      section, .bio-section {
+        padding: 3.6rem 0;
       }
       .section-head {
         margin-bottom: 2.2rem;
@@ -1521,27 +1571,50 @@
         font-size: 0.9rem;
       }
 
+      /* Portada Estilo Franco Curia en Celular: Tu foto arriba fundida hacia el título */
       .hero {
-        padding: 2.4rem 0 3.4rem;
+        min-height: auto;
+        padding: 15.5rem 0 3rem;
+        align-items: flex-end;
       }
-      .hero-grid {
-        gap: 2.4rem;
+      .hero-bg-visual {
+        width: 100%;
+        height: 360px;
+        bottom: auto;
+      }
+      .hero-bg-visual::after {
+        background: 
+          linear-gradient(180deg, rgba(4, 9, 18, 0.2) 0%, rgba(4, 9, 18, 0.65) 55%, #040912 95%),
+          radial-gradient(circle at 50% 30%, transparent 30%, rgba(4, 9, 18, 0.55) 100%);
+      }
+      .hero-bg-fallback {
+        padding-left: 0;
+      }
+      .hero-bg-fallback img {
+        max-width: 190px;
+      }
+      .hero-content-left {
         text-align: center;
+        max-width: 100%;
       }
       .hero-pill {
-        font-size: 0.67rem;
-        padding: 0.4rem 0.85rem;
-        margin-bottom: 1rem;
+        font-size: 0.66rem;
+        padding: 0.38rem 0.85rem;
+        margin-bottom: 0.9rem;
       }
       .hero h1 {
-        font-size: 1.82rem;
-        line-height: 1.18;
+        font-size: 2rem;
+        line-height: 1.12;
+      }
+      .hero-subtitle-bar {
+        font-size: 0.78rem;
+        letter-spacing: 1.3px;
         margin-bottom: 1rem;
       }
       .hero p.lead {
-        font-size: 0.95rem;
-        margin: 0 auto 1.75rem;
-        line-height: 1.6;
+        font-size: 0.94rem;
+        margin: 0 auto 1.65rem;
+        line-height: 1.58;
       }
       .hero-btns {
         flex-direction: column;
@@ -1558,9 +1631,10 @@
         gap: 0.55rem;
         padding-top: 0;
         border-top: none;
+        max-width: 100%;
       }
       .stat-box {
-        background: rgba(13, 31, 54, 0.65);
+        background: rgba(13, 31, 54, 0.75);
         border: 1px solid var(--border-subtle);
         border-radius: 12px;
         padding: 0.75rem 0.35rem;
@@ -1573,6 +1647,35 @@
       .stat-box span {
         font-size: 0.65rem;
         line-height: 1.25;
+      }
+
+      /* Biografía + Ecosistema en Celular */
+      .about-content {
+        text-align: center;
+      }
+      .coach-credentials-strip {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.45rem;
+      }
+      .cred-badge {
+        padding: 0.55rem 0.25rem;
+      }
+      .cred-badge strong {
+        font-size: 0.65rem;
+      }
+      .cred-badge span {
+        font-size: 0.58rem;
+      }
+      .social-row {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .social-chip {
+        width: 100%;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.78rem;
       }
 
       .hero-showcase {
@@ -1625,39 +1728,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
-      }
-
-      .coach-frame {
-        max-width: 350px;
-        margin: 0 auto;
-        padding: 1rem;
-      }
-      .coach-credentials-strip {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.4rem;
-      }
-      .cred-badge {
-        padding: 0.5rem 0.25rem;
-      }
-      .cred-badge strong {
-        font-size: 0.64rem;
-      }
-      .cred-badge span {
-        font-size: 0.58rem;
-      }
-      .about-content {
-        text-align: center;
-      }
-      .social-row {
-        justify-content: center;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.6rem;
-      }
-      .social-chip {
-        width: 100%;
-        padding: 0.6rem 0.5rem;
-        font-size: 0.78rem;
       }
 
       .comp-table th, .comp-table td {
@@ -1752,8 +1822,8 @@
       </button>
 
       <nav id="mainNav">
+        <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
         <a href="#ecosistema" class="nav-link">Qué Incluye</a>
-        <a href="#sobre-mi" class="nav-link">Quién Soy</a>
         <a href="#planes" class="nav-link">Planes y Asesoría</a>
         <a href="#proceso" class="nav-link">Cómo Empezar</a>
         <a href="#faqs" class="nav-link">FAQs</a>
@@ -1763,16 +1833,24 @@
   </header>
 
   <main>
-    <!-- HERO -->
-    <section class="hero" style="border-top: none;">
-      <div class="container hero-grid">
-        <div class="scroll-pop">
-          <div class="hero-pill">IFBB Academy & IAF Certified • Biomecánica Deportiva</div>
-          <h1>HIPERTROFIA CON <span class="gold-gradient-text">PRECISIÓN BIOMECÁNICA</span> Y SOBRECARGA REAL.</h1>
-          <p class="lead">Dejá de improvisar en el gimnasio con rutinas genéricas. Aplico criterio ingenieril, selección exacta de ejercicios según tus palancas y auditoría cuantitativa de cargas para que progreses sin perder tiempo ni lesionarte.</p>
+    <!-- 1. PORTADA HERO ESTILO FRANCO CURIA (TU FOTO FUNDIDA EN EL FONDO DERECHO) -->
+    <section class="hero">
+      <div class="hero-bg-visual">
+        <img id="heroPersonPhoto" src="perfil.jpg" alt="Augusto Abello" class="hero-person-img">
+        <div id="heroFallbackLogo" class="hero-bg-fallback" style="display:none;">
+          <img class="site-logo" src="logo.jpg" alt="AP Logo">
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero-content-left scroll-pop">
+          <div class="hero-pill">IFBB Academy & IAF Certified • Ingeniería (UCA)</div>
+          <h1>ENTRENÁ CON <br><span class="gold-gradient-text">AUGUSTO ABELLO</span></h1>
+          <span class="hero-subtitle-bar">Planes de Entrenamiento, Biomecánica & Nutrición Aplicada</span>
+          <p class="lead">Dejá de improvisar en el gimnasio con rutinas genéricas. Aplico criterio ingenieril, selección exacta de ejercicios según tus brazos de palanca y auditoría cuantitativa de cargas para que construyas masa muscular sin perder tiempo.</p>
           <div class="hero-btns">
-            <a href="#planes" class="btn-gold">Elegir mi Plan de Trabajo →</a>
-            <a href="#ecosistema" class="btn-outline">Ver el Sistema por Dentro</a>
+            <a href="#planes" class="btn-gold">Conocer Planes →</a>
+            <a href="#sobre-mi" class="btn-outline">Conocer Quién Soy</a>
           </div>
           <div class="hero-stats">
             <div class="stat-box">
@@ -1789,8 +1867,72 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- SHOWCASE CARD -->
+    <!-- 2. BIOGRAFÍA INMEDIATA + TARJETA DEL ECOSISTEMA -->
+    <section id="sobre-mi" class="bio-section">
+      <div class="container bio-grid">
+        <div class="about-content scroll-pop">
+          <span class="eyebrow" style="color: var(--gold-main); font-size: 0.76rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display:block; margin-bottom:0.4rem;">Quién Soy & Mi Filosofía</span>
+          <h2>INGENIERÍA, BIOMECÁNICA Y <span class="gold-gradient-text">RESULTADOS MEDIBLES</span>.</h2>
+          <p>Soy <strong>Augusto Abello</strong>, preparador físico certificado internacionalmente por la <strong>IFBB (International Federation of Bodybuilding and Fitness)</strong> y la <strong>IAF (International Academy of Fitness)</strong> en Hipertrofia Muscular y Biomecánica Deportiva, y estudio <strong>Ingeniería Industrial en la Universidad Católica Argentina (UCA)</strong>.</p>
+          <p>Creé <strong>AP • Hipertrofia Inteligente</strong> para llevar la mentalidad analítica e ingenieril al entrenamiento de fuerza. La mayoría de las personas que entrenan duro en el gimnasio desperdician años de esfuerzo por no tener un sistema medible: eligen ejercicios que no se adaptan a su estructura ósea, no registran sus cargas y confunden terminar agotados con generar hipertrofia.</p>
+          <p>Mi trabajo es estructurar cada variable de tu proceso —brazos de palanca, trayectorias, control del RIR, sobrecarga progresiva y nutrición flexible— en un sistema claro, eficiente y sostenible.</p>
+
+          <div class="coach-credentials-strip">
+            <div class="cred-badge">
+              <strong>IFBB ACADEMY</strong>
+              <span>Hipertrofia y Biomecánica</span>
+            </div>
+            <div class="cred-badge">
+              <strong>IAF CERTIFIED</strong>
+              <span>Preparador Físico</span>
+            </div>
+            <div class="cred-badge">
+              <strong>ING. INDUSTRIAL</strong>
+              <span>Estudiante en UCA</span>
+            </div>
+          </div>
+
+          <div class="about-pillars">
+            <div class="pillar-box">
+              <strong>Rigurosidad Analítica (UCA)</strong>
+              <span>Todo lo que no se mide, no mejora. Auditamos volumen, intensidad (RIR) y progresión cuantitativa.</span>
+            </div>
+            <div class="pillar-box">
+              <strong>Biomecánica & Salud Articular</strong>
+              <span>Maximizamos la tensión mecánica sobre el músculo reduciendo el desgaste en hombros, codos y rodillas.</span>
+            </div>
+          </div>
+
+          <!-- REDES SOCIALES -->
+          <div class="social-row">
+            <a href="https://www.instagram.com/augusto__ap/" target="_blank" rel="noopener" class="social-chip">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>@augusto__ap</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/augusto-abello-pueyo/" target="_blank" rel="noopener" class="social-chip">
+              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="javascript:void(0)" onclick="return false;" class="social-chip soon" title="Próximamente en TikTok">
+              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+              <span>TikTok</span>
+              <span class="soon-tag">Próx.</span>
+            </a>
+
+            <a href="javascript:void(0)" onclick="return false;" class="social-chip soon" title="Próximamente en YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span>YouTube</span>
+              <span class="soon-tag">Próx.</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- TARJETA RESUMEN DEL ECOSISTEMA -->
         <div class="hero-showcase scroll-pop delay-1">
           <div class="showcase-top-pill">Hipertrofia Inteligente • Ingeniería</div>
           <div class="showcase-logo-center">
@@ -1852,7 +1994,7 @@
       </div>
     </section>
 
-    <!-- FILTRO DE IDENTIFICACIÓN: ENTRENAR AL AZAR VS SISTEMA HIPERTROFIA INTELIGENTE -->
+    <!-- 3. FILTRO DE IDENTIFICACIÓN: ENTRENAR AL AZAR VS SISTEMA HIPERTROFIA INTELIGENTE -->
     <section>
       <div class="container">
         <div class="section-head scroll-pop">
@@ -1885,7 +2027,7 @@
       </div>
     </section>
 
-    <!-- QUÉ INCLUYE TU SISTEMA POR DENTRO -->
+    <!-- 4. QUÉ INCLUYE TU SISTEMA POR DENTRO -->
     <section id="ecosistema">
       <div class="container">
         <div class="section-head scroll-pop">
@@ -2018,81 +2160,7 @@
       </div>
     </section>
 
-    <!-- QUIÉN SOY / SOBRE MÍ + REDES SOCIALES -->
-    <section id="sobre-mi">
-      <div class="container about-grid">
-        <div class="coach-frame scroll-pop">
-          <div class="coach-photo-placeholder">
-            <img id="coachPhoto" src="perfil.jpg" alt="Augusto Abello - AP Hipertrofia Inteligente" class="coach-img">
-            <div id="photoPlaceholderContent" style="display:flex; flex-direction:column; align-items:center;">
-              <img class="site-logo" src="logo.jpg" alt="AP Logo" style="max-width: 115px; border-radius: 12px; margin-bottom: 0.9rem; border: 1px solid var(--border-gold);">
-              <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--gold-light);">AUGUSTO ABELLO</h4>
-              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Preparador Físico & Fundador de AP Hipertrofia Inteligente</p>
-            </div>
-          </div>
-          <div class="coach-credentials-strip">
-            <div class="cred-badge">
-              <strong>IFBB ACADEMY</strong>
-              <span>Hipertrofia</span>
-            </div>
-            <div class="cred-badge">
-              <strong>IAF CERTIFIED</strong>
-              <span>Biomecánica</span>
-            </div>
-            <div class="cred-badge">
-              <strong>ING. INDUSTRIAL</strong>
-              <span>UCA</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="about-content scroll-pop delay-1">
-          <span class="eyebrow" style="color: var(--gold-main); font-size: 0.76rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display:block; margin-bottom:0.4rem;">Sobre Mí & Filosofía</span>
-          <h2>INGENIERÍA, BIOMECÁNICA Y <span class="gold-gradient-text">RESULTADOS MEDIBLES</span>.</h2>
-          <p>Soy <strong>Augusto Abello</strong>, entrenador certificado internacionalmente por la <strong>IFBB (International Federation of Bodybuilding and Fitness)</strong> y la <strong>IAF (International Academy of Fitness)</strong> en Hipertrofia Muscular y Biomecánica Deportiva, y estudio <strong>Ingeniería Industrial en la Universidad Católica Argentina (UCA)</strong>.</p>
-          <p>Creé <strong>AP • Hipertrofia Inteligente</strong> para llevar la mentalidad analítica e ingenieril al entrenamiento de fuerza. La mayoría de las personas que entrenan en el gimnasio desperdician esfuerzo por no tener un sistema medible: usan ejercicios que no se adaptan a su estructura ósea, no registran sus cargas y confunden terminar cansados con generar estímulo real.</p>
-          <p>Mi trabajo es estructurar cada variable de tu entrenamiento —brazos de palanca, trayectorias, control del RIR, sobrecarga progresiva y nutrición flexible— en un sistema claro, eficiente y sostenible.</p>
-
-          <div class="about-pillars">
-            <div class="pillar-box">
-              <strong>Rigurosidad Analítica (UCA)</strong>
-              <span>Todo lo que no se mide, no mejora. Auditamos volumen, intensidad (RIR) y progresión cuantitativa.</span>
-            </div>
-            <div class="pillar-box">
-              <strong>Biomecánica & Salud Articular</strong>
-              <span>Maximizamos la tensión mecánica sobre el músculo reduciendo el desgaste en hombros, codos y rodillas.</span>
-            </div>
-          </div>
-
-          <!-- REDES SOCIALES -->
-          <div class="social-row">
-            <a href="https://www.instagram.com/augusto__ap/" target="_blank" rel="noopener" class="social-chip">
-              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-              <span>@augusto__ap</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/augusto-abello-pueyo/" target="_blank" rel="noopener" class="social-chip">
-              <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
-              <span>LinkedIn</span>
-            </a>
-
-            <a href="javascript:void(0)" onclick="return false;" class="social-chip soon" title="Próximamente en TikTok">
-              <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-              <span>TikTok</span>
-              <span class="soon-tag">Próx.</span>
-            </a>
-
-            <a href="javascript:void(0)" onclick="return false;" class="social-chip soon" title="Próximamente en YouTube">
-              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-              <span>YouTube</span>
-              <span class="soon-tag">Próx.</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PLANES Y SERVICIOS (#1 PLAN A MEDIDA, #2 ASESORÍA ONLINE) -->
+    <!-- 5. PLANES Y SERVICIOS (#1 PLAN A MEDIDA, #2 ASESORÍA ONLINE) -->
     <section id="planes">
       <div class="container">
         <div class="section-head scroll-pop">
@@ -2190,7 +2258,7 @@
       </div>
     </section>
 
-    <!-- PROCESO PASO A PASO (5 PASOS CON LLAMADA) -->
+    <!-- 6. PROCESO PASO A PASO (5 PASOS CON LLAMADA) -->
     <section id="proceso">
       <div class="container">
         <div class="section-head scroll-pop">
@@ -2243,7 +2311,7 @@
       </div>
     </section>
 
-    <!-- PREGUNTAS FRECUENTES + BANNER FINAL DE CIERRE -->
+    <!-- 7. PREGUNTAS FRECUENTES + BANNER FINAL DE CIERRE -->
     <section id="faqs">
       <div class="container">
         <div class="section-head scroll-pop">
@@ -2343,8 +2411,8 @@
       </div>
 
       <div class="footer-links">
+        <a href="#sobre-mi">Sobre Mí</a>
         <a href="#ecosistema">Qué Incluye</a>
-        <a href="#sobre-mi">Quién Soy</a>
         <a href="#planes">Planes</a>
         <a href="#proceso">Proceso</a>
         <a href="#faqs">Preguntas</a>
@@ -2439,21 +2507,22 @@
       };
     });
 
-    // 5. Detector inteligente de tu foto de perfil (perfil.jpg, perfil.png, perfil.jpeg)
-    const profileImg = document.getElementById('coachPhoto');
-    const profilePlaceholder = document.getElementById('photoPlaceholderContent');
-    const profileFiles = ['perfil.jpg', 'perfil.png', 'perfil.jpeg', 'perfil_jpg.jpg', 'Perfil.jpg'];
-    let profAttempt = 0;
+    // 5. Detector inteligente de tu foto en el fondo de la Portada Hero (prueba perfil.jpg, perfil.png, hero.jpg)
+    const heroPersonImg = document.getElementById('heroPersonPhoto');
+    const heroFallback = document.getElementById('heroFallbackLogo');
+    const heroPhotoFiles = ['perfil.jpg', 'perfil.png', 'perfil.jpeg', 'hero.jpg', 'hero.png', 'Perfil.jpg'];
+    let heroAttempt = 0;
 
-    profileImg.onload = function() {
-      if (profilePlaceholder) profilePlaceholder.style.display = 'none';
+    heroPersonImg.onload = function() {
+      if (heroFallback) heroFallback.style.display = 'none';
     };
-    profileImg.onerror = function() {
-      profAttempt++;
-      if (profAttempt < profileFiles.length) {
-        profileImg.src = profileFiles[profAttempt];
+    heroPersonImg.onerror = function() {
+      heroAttempt++;
+      if (heroAttempt < heroPhotoFiles.length) {
+        heroPersonImg.src = heroPhotoFiles[heroAttempt];
       } else {
-        profileImg.style.display = 'none';
+        heroPersonImg.style.display = 'none';
+        if (heroFallback) heroFallback.style.display = 'flex';
       }
     };
 
