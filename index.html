@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>AP • Hipertrofia Inteligente | Coaching & Biomecánica Aplicada</title>
+
+  <!-- FAVICON (LOGUITO DE LA PESTAÑA DEL NAVEGADOR) -->
+  <link id="dynamicFavicon" rel="icon" type="image/jpeg" href="logo.jpg">
+  <link rel="shortcut icon" type="image/jpeg" href="logo.jpg">
+  <link rel="apple-touch-icon" href="logo.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -121,7 +127,7 @@
       stroke-linejoin: round;
     }
 
-    /* BOTONES DE REDES SOCIALES (ACTIVOS + PRÓXIMAMENTE) */
+    /* BOTONES DE REDES SOCIALES */
     .social-row {
       display: flex;
       flex-wrap: wrap;
@@ -1245,7 +1251,7 @@
       fill: currentColor;
     }
 
-    /* FOOTER */
+    /* FOOTER & POLÍTICAS LEGALES */
     footer {
       border-top: 1px solid var(--border-gold);
       padding: 3.5rem 0 5rem;
@@ -1275,9 +1281,127 @@
       text-decoration: none;
       font-size: 0.88rem;
       padding: 0.25rem;
+      transition: color 0.2s;
     }
     .footer-links a:hover {
       color: var(--gold-light);
+    }
+
+    .footer-legal-bar {
+      width: 100%;
+      max-width: 900px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1.4rem;
+      margin-top: 0.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.85rem;
+    }
+    .legal-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .legal-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .legal-btn:hover {
+      color: var(--gold-light);
+    }
+    .legal-disclaimer-text {
+      color: #64748b;
+      font-size: 0.74rem;
+      line-height: 1.5;
+      max-width: 780px;
+    }
+
+    /* MODAL EMERGENTE PARA POLÍTICAS LEGALES */
+    .legal-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(3, 8, 16, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 1.25rem;
+    }
+    .legal-modal-backdrop.open {
+      display: flex;
+    }
+    .legal-modal-box {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-gold);
+      border-radius: 18px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+    }
+    .legal-modal-header {
+      padding: 1.25rem 1.5rem;
+      background: #081526;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .legal-modal-header h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--gold-light);
+      text-transform: uppercase;
+    }
+    .legal-modal-close {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-white);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .legal-modal-close:hover {
+      border-color: var(--border-gold);
+      color: var(--gold-light);
+    }
+    .legal-modal-body {
+      padding: 1.5rem;
+      overflow-y: auto;
+      text-align: left;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+    .legal-modal-body h4 {
+      color: var(--gold-light);
+      font-family: var(--font-heading);
+      font-size: 0.94rem;
+      margin-top: 0.3rem;
     }
 
     /* ==========================================
@@ -1497,7 +1621,7 @@
           </div>
         </div>
 
-        <!-- SHOWCASE CARD CON ÍCONOS VECTORIALES DORADOS -->
+        <!-- SHOWCASE CARD -->
         <div class="hero-showcase scroll-pop delay-1">
           <div class="showcase-logo-center">
             <img class="site-logo" src="logo.jpg" alt="AP Hipertrofia Inteligente">
@@ -1994,7 +2118,7 @@
     <span>Consultar por WhatsApp</span>
   </a>
 
-  <!-- FOOTER -->
+  <!-- FOOTER CON POLÍTICAS LEGALES Y DESCARGO DE RESPONSABILIDAD -->
   <footer>
     <div class="container footer-inner">
       <div class="brand-text" style="align-items: center;">
@@ -2035,9 +2159,32 @@
         <a href="#faqs">Preguntas</a>
         <a href="https://wa.me/5491157629903" target="_blank">WhatsApp: +54 9 11 5762-9903</a>
       </div>
-      <p style="color: #64748b; font-size: 0.78rem;">© 2026 AP Hipertrofia Inteligente. Todos los derechos reservados.</p>
+
+      <!-- BARRA DE POLÍTICAS Y AVISO LEGAL -->
+      <div class="footer-legal-bar">
+        <div class="legal-links">
+          <button type="button" class="legal-btn" onclick="openLegalModal('terminos')">Términos y Condiciones</button>
+          <button type="button" class="legal-btn" onclick="openLegalModal('privacidad')">Política de Privacidad</button>
+          <button type="button" class="legal-btn" onclick="openLegalModal('descargo')">Aviso Legal y Salud</button>
+        </div>
+        <p class="legal-disclaimer-text">
+          <strong>Descargo de responsabilidad:</strong> Los programas de entrenamiento y las pautas de cálculo energético ofrecidos en AP • Hipertrofia Inteligente tienen fines estrictamente educativos, informativos y de acondicionamiento físico. No sustituyen el diagnóstico, tratamiento ni indicación de un médico o profesional de la salud habilitado. Se recomienda realizar un chequeo médico pre-competitivo o de aptitud física antes de iniciar cualquier programa de entrenamiento de fuerza.
+        </p>
+        <p style="color: #64748b; font-size: 0.78rem; margin-top: 0.3rem;">© 2026 AP Hipertrofia Inteligente. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
+
+  <!-- MODAL PARA LEER TÉRMINOS, PRIVACIDAD Y AVISO DE SALUD -->
+  <div class="legal-modal-backdrop" id="legalModal">
+    <div class="legal-modal-box">
+      <div class="legal-modal-header">
+        <h3 id="legalModalTitle">Información Legal</h3>
+        <button type="button" class="legal-modal-close" onclick="closeLegalModal()">&times;</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody"></div>
+    </div>
+  </div>
 
   <script>
     // 1. Menú Hamburguesa Mobile
@@ -2085,10 +2232,23 @@
       });
     });
 
-    // 4. Detector inteligente de tu logo (logo.jpg, logo.png, logo.jpeg)
+    // 4. Detector inteligente de tu logo + Favicon automático en la pestaña
+    const svgFaviconFallback = "data:image/svg+xml," + encodeURIComponent(
+      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
+      '<rect width="100" height="100" rx="20" fill="#091728" stroke="#d4af37" stroke-width="5"/>' +
+      '<text x="50%" y="68%" text-anchor="middle" fill="#d4af37" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="52">AP</text>' +
+      '</svg>'
+    );
+    const faviconEl = document.getElementById('dynamicFavicon');
     const logoExtensions = ['logo.jpg', 'logo.png', 'logo.jpeg', 'Logo.jpg', 'Logo.png'];
-    document.querySelectorAll('.site-logo').forEach(img => {
+
+    document.querySelectorAll('.site-logo').forEach((img, index) => {
       let attempt = 0;
+      img.onload = function() {
+        if (index === 0 && faviconEl) {
+          faviconEl.href = img.src;
+        }
+      };
       img.onerror = function() {
         attempt++;
         if (attempt < logoExtensions.length) {
@@ -2097,6 +2257,9 @@
           img.style.display = 'none';
           const fallback = img.parentElement.querySelector('.logo-fallback');
           if (fallback) fallback.style.display = 'block';
+          if (index === 0 && faviconEl) {
+            faviconEl.href = svgFaviconFallback;
+          }
         }
       };
     });
@@ -2118,6 +2281,67 @@
         profileImg.style.display = 'none';
       }
     };
+
+    // 6. Textos y Apertura del Modal Legal (Términos, Privacidad y Salud)
+    const legalContents = {
+      terminos: {
+        title: "Términos y Condiciones del Servicio",
+        body: `
+          <h4>1. Modalidades de Contratación</h4>
+          <p><strong>Plan a Medida (Pago Único):</strong> Incluye el diseño de la planificación cerrada inicial, planilla interactiva en Google Sheets, Manual de Operaciones en PDF, Librería de Ejecución Técnica en video y cálculo de requerimientos calóricos/macronutrientes. Al tratarse de un servicio autogestionable de pago único, no incluye seguimiento por WhatsApp, corrección de videos ni ajustes posteriores.</p>
+          <p><strong>Asesoría Online 1 a 1 (Suscripción Mensual):</strong> Incluye planificación dinámica con actualización mensual, planilla automatizada en Google Sheets, acceso a carpeta privada en Google Drive, corrección técnica por video, soporte diario vía WhatsApp y check-in semanal.</p>
+          <h4>2. Proceso de Admisión y Entrega</h4>
+          <p>El inicio del servicio requiere completar el formulario inicial y realizar la llamada 1 a 1 de diagnóstico para evaluar la viabilidad del plan. Una vez confirmado el pago y definidos los objetivos, el sistema completo se entrega dentro del plazo acordado.</p>
+          <h4>3. Propiedad Intelectual</h4>
+          <p>Todo el material entregado (planillas automatizadas en Google Sheets, el PDF "Manual de Operaciones: Hipertrofia Inteligente", guías de equivalencias y la Librería de Ejecución Técnica) es de uso personal e intransferible del alumno. Queda prohibida su reproducción, distribución o comercialización a terceros.</p>
+          <h4>4. Política de Pagos y Reembolsos</h4>
+          <p>Dado que cada planificación y estructura de archivos se diseña de manera 100% personalizada para cada alumno, una vez entregado el material digital o iniciada la asesoría no se realizan reembolsos.</p>
+        `
+      },
+      privacidad: {
+        title: "Política de Privacidad y Confidencialidad",
+        body: `
+          <h4>1. Recolección de Datos Personales</h4>
+          <p>En <strong>AP • Hipertrofia Inteligente</strong> recolectamos únicamente la información necesaria para diseñar y auditar tu programación física: nombre, datos de contacto (WhatsApp y correo electrónico para dar acceso a Google Drive/Sheets), medidas corporales, historial de entrenamiento y disponibilidad horaria completados en el formulario inicial.</p>
+          <h4>2. Uso de Videos de Corrección Técnica e Imágenes</h4>
+          <p>Los videos de ejecución de ejercicios, registros de peso corporal y reportes de check-in semanal enviados por el alumno se utilizan exclusivamente para el análisis biomecánico y el ajuste de la planificación. Ningún video, foto o dato personal será publicado en redes sociales ni compartido con terceros sin el consentimiento previo y expreso del alumno.</p>
+          <h4>3. Seguridad y Almacenamiento</h4>
+          <p>La documentación de cada asesorado se aloja en carpetas privadas de Google Drive con acceso restringido únicamente al alumno y al entrenador.</p>
+        `
+      },
+      descargo: {
+        title: "Aviso Legal y Descargo de Responsabilidad Médica",
+        body: `
+          <h4>1. Finalidad Deportiva y Educativa</h4>
+          <p>Los servicios brindados por <strong>Augusto Abello (AP • Hipertrofia Inteligente)</strong> están orientados al entrenamiento de fuerza, hipertrofia muscular y biomecánica deportiva aplicada bajo certificaciones IFBB Academy e IAF.</p>
+          <h4>2. No Sustitución de Asesoramiento Médico</h4>
+          <p>Las planificaciones de entrenamiento y el cálculo orientativo de calorías, macronutrientes y equivalencias de alimentos no constituyen un acto médico ni reemplazan el tratamiento de médicos clínicos, cardiólogos, kinesiólogos o licenciados en nutrición clínica, especialmente en personas con patologías preexistentes.</p>
+          <h4>3. Aptitud Física y Responsabilidad del Alumno</h4>
+          <p>Al contratar cualquiera de los planes, el alumno declara encontrarse en condiciones óptimas de salud física para realizar ejercicios de fuerza con cargas, comprometiéndose a informar de manera inmediata cualquier molestia articular, lesión previa o indicación médica particular.</p>
+        `
+      }
+    };
+
+    function openLegalModal(type) {
+      const content = legalContents[type];
+      if (!content) return;
+      document.getElementById('legalModalTitle').innerText = content.title;
+      document.getElementById('legalModalBody').innerHTML = content.body;
+      document.getElementById('legalModal').classList.add('open');
+    }
+
+    function closeLegalModal() {
+      document.getElementById('legalModal').classList.remove('open');
+    }
+
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('legalModal');
+      if (e.target === modal) closeLegalModal();
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLegalModal();
+    });
   </script>
 </body>
 </html>
