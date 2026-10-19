@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="theme-color" content="#050c16">
   <title>AP • Hipertrofia Inteligente | Coaching & Biomecánica Aplicada</title>
 
-  <!-- FAVICON (LOGUITO DE LA PESTAÑA DEL NAVEGADOR) -->
-  <link id="dynamicFavicon" rel="icon" type="image/jpeg" href="logo.jpg">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg">
   <link rel="shortcut icon" type="image/jpeg" href="logo.jpg">
   <link rel="apple-touch-icon" href="logo.jpg">
 
@@ -40,12 +41,14 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      min-width: 0;
     }
 
     html {
       scroll-behavior: smooth;
       overflow-x: hidden;
       width: 100%;
+      -webkit-text-size-adjust: 100%;
     }
 
     body {
@@ -67,9 +70,9 @@
        ========================================== */
     .scroll-pop {
       opacity: 0;
-      transform: translate3d(0, 52px, 0) scale(0.93);
-      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-                  transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translate3d(0, 42px, 0) scale(0.95);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
 
@@ -78,10 +81,10 @@
       transform: translate3d(0, 0, 0) scale(1);
     }
 
-    .delay-1 { transition-delay: 0.1s; }
-    .delay-2 { transition-delay: 0.2s; }
-    .delay-3 { transition-delay: 0.3s; }
-    .delay-4 { transition-delay: 0.4s; }
+    .delay-1 { transition-delay: 0.08s; }
+    .delay-2 { transition-delay: 0.16s; }
+    .delay-3 { transition-delay: 0.24s; }
+    .delay-4 { transition-delay: 0.32s; }
 
     /* LÍNEAS ARQUITECTÓNICAS DE FONDO */
     .arch-lines {
@@ -99,16 +102,16 @@
       width: 100%;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0 1.25rem;
+      padding: 0 1.35rem;
       position: relative;
       z-index: 2;
     }
 
     /* ÍCONOS SVG DORADOS */
     .icon-box {
-      width: 30px;
-      height: 30px;
-      border-radius: 7px;
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
       background: rgba(212, 175, 55, 0.12);
       border: 1px solid var(--border-gold);
       display: inline-flex;
@@ -137,8 +140,9 @@
     .social-chip {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.55rem;
-      padding: 0.55rem 1rem;
+      padding: 0.6rem 1rem;
       border-radius: 10px;
       background: rgba(13, 31, 54, 0.85);
       border: 1px solid var(--border-gold);
@@ -188,15 +192,16 @@
     .topbar {
       background: linear-gradient(90deg, #06101d 0%, #0f2542 50%, #06101d 100%);
       border-bottom: 1px solid var(--border-gold);
-      padding: 0.55rem 0.85rem;
+      padding: 0.55rem 1rem;
       text-align: center;
       font-size: 0.74rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 0.9px;
       text-transform: uppercase;
       color: var(--gold-light);
       position: relative;
       z-index: 102;
+      line-height: 1.4;
     }
     .topbar span.dot {
       display: inline-block;
@@ -206,14 +211,15 @@
       border-radius: 50%;
       margin-right: 6px;
       box-shadow: 0 0 8px var(--green-ok);
+      vertical-align: middle;
     }
 
-    /* NAVBAR & MENÚ HAMBURGUESA MOBILE */
+    /* NAVBAR & MENÚ HAMBURGUESA */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(6, 15, 28, 0.92);
+      background: rgba(6, 15, 28, 0.94);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border-subtle);
@@ -221,7 +227,7 @@
     .nav-container {
       max-width: 1180px;
       margin: 0 auto;
-      padding: 0.8rem 1.25rem;
+      padding: 0.8rem 1.35rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -236,8 +242,8 @@
       z-index: 105;
     }
     .brand-logo-box {
-      width: 46px;
-      height: 46px;
+      width: 44px;
+      height: 44px;
       border-radius: 10px;
       border: 1.5px solid var(--border-gold);
       background: #0b1c31;
@@ -260,18 +266,18 @@
     }
     .brand-text .ap-title {
       font-family: var(--font-heading);
-      font-size: 1.15rem;
+      font-size: 1.12rem;
       font-weight: 900;
       letter-spacing: 0.8px;
       background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      line-height: 1.1;
+      line-height: 1.15;
     }
     .brand-text .ap-sub {
-      font-size: 0.65rem;
+      font-size: 0.64rem;
       font-weight: 700;
-      letter-spacing: 1.8px;
+      letter-spacing: 1.6px;
       color: var(--text-light);
       text-transform: uppercase;
     }
@@ -280,7 +286,7 @@
       display: none;
       background: rgba(212, 175, 55, 0.1);
       border: 1px solid var(--border-gold);
-      border-radius: 8px;
+      border-radius: 9px;
       width: 44px;
       height: 44px;
       cursor: pointer;
@@ -290,10 +296,11 @@
       gap: 5px;
       z-index: 105;
       padding: 0;
+      flex-shrink: 0;
     }
     .menu-toggle span {
       display: block;
-      width: 22px;
+      width: 20px;
       height: 2px;
       background-color: var(--gold-light);
       border-radius: 2px;
@@ -361,31 +368,33 @@
     .hero-pill {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 0.5rem;
-      padding: 0.45rem 0.95rem;
+      padding: 0.45rem 1rem;
       border-radius: 999px;
       background: rgba(212, 175, 55, 0.1);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
-      font-size: 0.74rem;
+      font-size: 0.73rem;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 1.2px;
-      margin-bottom: 1.2rem;
+      letter-spacing: 1.1px;
+      margin-bottom: 1.25rem;
+      line-height: 1.35;
     }
     .hero h1 {
       font-family: var(--font-heading);
-      font-size: clamp(1.9rem, 4.2vw, 3.25rem);
+      font-size: clamp(1.85rem, 4.2vw, 3.25rem);
       font-weight: 900;
-      line-height: 1.12;
-      letter-spacing: -0.5px;
+      line-height: 1.14;
+      letter-spacing: -0.4px;
       margin-bottom: 1.25rem;
       text-transform: uppercase;
-      word-wrap: break-word;
     }
     .hero p.lead {
       color: var(--text-light);
       font-size: clamp(0.96rem, 1.5vw, 1.06rem);
+      line-height: 1.65;
       margin-bottom: 2rem;
       max-width: 590px;
     }
@@ -399,18 +408,18 @@
       background: var(--gold-gradient);
       color: #050c16;
       padding: 1rem 1.8rem;
-      min-height: 50px;
-      border-radius: 10px;
+      min-height: 52px;
+      border-radius: 11px;
       font-family: var(--font-heading);
       font-weight: 800;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.6px;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.6rem;
+      gap: 0.55rem;
       box-shadow: 0 10px 28px rgba(212, 175, 55, 0.28);
       transition: all 0.25s;
       text-align: center;
@@ -421,12 +430,12 @@
       box-shadow: 0 14px 34px rgba(212, 175, 55, 0.42);
     }
     .btn-outline {
-      background: rgba(13, 31, 54, 0.7);
+      background: rgba(13, 31, 54, 0.75);
       border: 1px solid var(--border-gold);
       color: var(--gold-light);
       padding: 1rem 1.6rem;
-      min-height: 50px;
-      border-radius: 10px;
+      min-height: 52px;
+      border-radius: 11px;
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.88rem;
@@ -453,12 +462,14 @@
     .stat-box strong {
       display: block;
       font-family: var(--font-heading);
-      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      font-size: clamp(1rem, 2vw, 1.3rem);
       font-weight: 900;
       color: var(--gold-light);
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
     }
     .stat-box span {
-      font-size: 0.75rem;
+      font-size: 0.74rem;
       color: var(--text-muted);
       font-weight: 600;
       line-height: 1.3;
@@ -470,41 +481,40 @@
       background: linear-gradient(160deg, #0f2440 0%, #081526 100%);
       border: 1.5px solid var(--border-gold);
       border-radius: 20px;
-      padding: 1.8rem 1.5rem;
+      padding: 2rem 1.5rem 1.6rem;
       position: relative;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 175, 55, 0.12);
       width: 100%;
     }
-    .hero-showcase::before {
-      content: "HIPERTROFIA INTELIGENTE • INGENIERÍA DEL ENTRENAMIENTO";
+    .showcase-top-pill {
       position: absolute;
-      top: -12px;
+      top: -13px;
       left: 50%;
       transform: translateX(-50%);
       background: var(--gold-gradient);
       color: #050c16;
-      font-size: 0.64rem;
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
       font-weight: 900;
-      padding: 0.25rem 0.85rem;
+      padding: 0.28rem 0.9rem;
       border-radius: 999px;
-      letter-spacing: 0.7px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
       white-space: nowrap;
-      max-width: 94%;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
     }
     .showcase-logo-center {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0.6rem 0.5rem 1.25rem;
+      padding: 0.4rem 0.5rem 1.25rem;
       border-bottom: 1px solid var(--border-subtle);
       margin-bottom: 1.2rem;
     }
     .showcase-logo-center img {
-      width: 150px;
-      height: 150px;
+      width: 140px;
+      height: 140px;
       object-fit: cover;
       border-radius: 16px;
       border: 1.5px solid var(--border-gold);
@@ -513,7 +523,7 @@
     }
     .ap-monogram-svg {
       width: 100%;
-      max-width: 240px;
+      max-width: 230px;
       height: auto;
       margin-bottom: 0.4rem;
       filter: drop-shadow(0 8px 18px rgba(0,0,0,0.6));
@@ -521,18 +531,18 @@
     .showcase-checklist {
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.75rem;
     }
     .showcase-item {
       background: rgba(5, 12, 22, 0.65);
       border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 0.75rem 0.9rem;
+      border-radius: 11px;
+      padding: 0.8rem 0.95rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 0.5rem;
-      font-size: 0.83rem;
+      gap: 0.65rem;
+      font-size: 0.84rem;
       transition: border-color 0.2s;
     }
     .showcase-item:hover {
@@ -543,11 +553,13 @@
       align-items: center;
       gap: 0.7rem;
       font-weight: 600;
+      text-align: left;
+      line-height: 1.35;
     }
     .showcase-item .badge-mini {
       font-size: 0.68rem;
       font-weight: 800;
-      padding: 0.2rem 0.5rem;
+      padding: 0.22rem 0.55rem;
       border-radius: 6px;
       background: rgba(212, 175, 55, 0.15);
       color: var(--gold-light);
@@ -573,19 +585,20 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 2.2px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.55rem;
     }
     .section-head h2 {
       font-family: var(--font-heading);
-      font-size: clamp(1.65rem, 3.5vw, 2.45rem);
+      font-size: clamp(1.55rem, 3.5vw, 2.45rem);
       font-weight: 900;
       text-transform: uppercase;
-      line-height: 1.16;
-      margin-bottom: 0.8rem;
+      line-height: 1.18;
+      margin-bottom: 0.85rem;
     }
     .section-head p {
       color: var(--text-muted);
-      font-size: clamp(0.92rem, 1.5vw, 1rem);
+      font-size: clamp(0.93rem, 1.5vw, 1rem);
+      line-height: 1.6;
     }
 
     /* PAIN POINTS VS SOLUTION */
@@ -596,8 +609,8 @@
     }
     .vs-card {
       background: var(--bg-card);
-      border-radius: 16px;
-      padding: 2rem 1.75rem;
+      border-radius: 18px;
+      padding: 2.1rem 1.75rem;
       border: 1px solid var(--border-subtle);
       width: 100%;
     }
@@ -612,26 +625,28 @@
     }
     .vs-card h3 {
       font-family: var(--font-heading);
-      font-size: 1.18rem;
+      font-size: 1.16rem;
       font-weight: 800;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1.35rem;
       display: flex;
       align-items: center;
       gap: 0.6rem;
       text-transform: uppercase;
+      line-height: 1.3;
     }
     .vs-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.95rem;
+      gap: 1.05rem;
     }
     .vs-list li {
       display: flex;
-      gap: 0.7rem;
-      font-size: 0.92rem;
+      gap: 0.75rem;
+      font-size: 0.93rem;
       color: var(--text-light);
       align-items: flex-start;
+      line-height: 1.55;
     }
 
     /* ECOSISTEMA POR DENTRO */
@@ -645,7 +660,7 @@
       background: var(--bg-card);
       border: 1px solid var(--border-gold);
       border-radius: 18px;
-      padding: 1.65rem;
+      padding: 1.75rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -654,10 +669,6 @@
       overflow: hidden;
     }
     .mockup-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 1rem;
       margin-bottom: 0.85rem;
     }
     .mockup-tag {
@@ -665,39 +676,39 @@
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-      padding: 0.25rem 0.7rem;
+      padding: 0.28rem 0.75rem;
       border-radius: 999px;
       background: rgba(212, 175, 55, 0.15);
       color: var(--gold-light);
       border: 1px solid var(--border-gold);
       display: inline-block;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
     .mockup-header h3 {
       font-family: var(--font-heading);
       font-size: 1.22rem;
       font-weight: 800;
-      line-height: 1.25;
+      line-height: 1.28;
     }
     .mockup-desc {
       color: var(--text-muted);
-      font-size: 0.88rem;
-      margin-bottom: 1.3rem;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.35rem;
     }
 
-    /* PLANILLA UI LIMPIA */
+    /* PLANILLA UI (ADAPTABLE AL 100% EN CELULAR SIN SCROLL RARO) */
     .sheets-ui {
       background: #06101e;
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 12px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      font-size: 0.76rem;
+      overflow: hidden;
+      font-size: 0.78rem;
       width: 100%;
     }
     .sheets-topbar {
       background: #0f233c;
-      padding: 0.65rem 0.9rem;
+      padding: 0.65rem 0.95rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -710,27 +721,34 @@
     .sheets-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 390px;
     }
     .sheets-table th {
       background: rgba(255,255,255,0.04);
       color: var(--text-muted);
       text-align: left;
-      padding: 0.55rem 0.65rem;
+      padding: 0.6rem 0.7rem;
       font-weight: 700;
       border-bottom: 1px solid rgba(255,255,255,0.07);
     }
     .sheets-table td {
-      padding: 0.6rem 0.65rem;
+      padding: 0.65rem 0.7rem;
       border-bottom: 1px solid rgba(255,255,255,0.05);
       color: var(--text-light);
+      vertical-align: middle;
+    }
+    .mobile-marks-sub {
+      display: none;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 0.18rem;
+      font-weight: 500;
     }
     .pill-green {
       background: rgba(34, 197, 94, 0.16);
       color: #4ade80;
       border: 1px solid rgba(34, 197, 94, 0.4);
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
       font-weight: 800;
       font-size: 0.68rem;
       white-space: nowrap;
@@ -740,42 +758,46 @@
       background: rgba(239, 68, 68, 0.16);
       color: #f87171;
       border: 1px solid rgba(239, 68, 68, 0.4);
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
       font-weight: 800;
       font-size: 0.68rem;
       white-space: nowrap;
       display: inline-block;
     }
 
-    /* LIBRERÍA DE EJECUCIÓN PREVIEW UNIFICADA */
+    /* LIBRERÍA DE EJECUCIÓN PREVIEW */
     .library-preview-box {
       background: #06101e;
       border: 1px solid rgba(255,255,255,0.12);
       border-radius: 12px;
-      padding: 0.75rem 0.9rem;
+      padding: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
     }
     .lib-row {
+      background: rgba(255, 255, 255, 0.025);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 10px;
+      padding: 0.8rem 0.9rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.7rem 0.25rem;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      gap: 0.65rem;
-    }
-    .lib-row:last-child {
-      border-bottom: none;
+      gap: 0.75rem;
     }
     .lib-row .ex-name {
       font-weight: 700;
-      font-size: 0.83rem;
+      font-size: 0.84rem;
       color: var(--text-white);
+      display: block;
     }
     .lib-row .ex-sub {
-      font-size: 0.72rem;
+      font-size: 0.73rem;
       color: var(--text-muted);
       display: block;
-      margin-top: 0.15rem;
+      margin-top: 0.2rem;
+      line-height: 1.4;
     }
     .included-badge {
       background: rgba(212, 175, 55, 0.14);
@@ -783,7 +805,7 @@
       color: var(--gold-light);
       padding: 0.28rem 0.6rem;
       border-radius: 6px;
-      font-size: 0.7rem;
+      font-size: 0.69rem;
       font-weight: 800;
       white-space: nowrap;
       display: inline-flex;
@@ -801,8 +823,8 @@
     .deliv-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 1.4rem;
+      border-radius: 16px;
+      padding: 1.5rem;
       transition: border-color 0.2s, transform 0.2s;
     }
     .deliv-card:hover {
@@ -813,17 +835,20 @@
       font-family: var(--font-heading);
       color: var(--gold-main);
       font-weight: 900;
-      font-size: 0.78rem;
-      margin-bottom: 0.4rem;
+      font-size: 0.76rem;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.45rem;
     }
     .deliv-card h4 {
       font-family: var(--font-heading);
-      font-size: 1.02rem;
-      margin-bottom: 0.4rem;
+      font-size: 1.04rem;
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
     }
     .deliv-card p {
-      font-size: 0.85rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
+      line-height: 1.55;
     }
 
     /* SOBRE MÍ / AUTORIDAD */
@@ -845,7 +870,7 @@
     }
     .coach-photo-placeholder {
       width: 100%;
-      aspect-ratio: 4 / 4.3;
+      aspect-ratio: 4 / 4.2;
       background: radial-gradient(circle at 50% 35%, #163256 0%, #071322 100%);
       border-radius: 14px;
       border: 1px solid var(--border-subtle);
@@ -882,27 +907,30 @@
       display: block;
       color: var(--gold-light);
       font-family: var(--font-heading);
-      font-size: 0.74rem;
-      letter-spacing: 0.3px;
+      font-size: 0.72rem;
+      letter-spacing: 0.2px;
+      line-height: 1.2;
     }
     .cred-badge span {
-      font-size: 0.67rem;
+      font-size: 0.65rem;
       color: var(--text-muted);
       display: block;
-      margin-top: 0.1rem;
+      margin-top: 0.15rem;
+      line-height: 1.2;
     }
     .about-content h2 {
       font-family: var(--font-heading);
-      font-size: clamp(1.65rem, 3.2vw, 2.4rem);
+      font-size: clamp(1.6rem, 3.2vw, 2.4rem);
       font-weight: 900;
       text-transform: uppercase;
       margin-bottom: 1rem;
-      line-height: 1.15;
+      line-height: 1.16;
     }
     .about-content p {
       color: var(--text-light);
-      margin-bottom: 1rem;
-      font-size: 0.96rem;
+      margin-bottom: 1.05rem;
+      font-size: 0.95rem;
+      line-height: 1.65;
     }
     .about-pillars {
       display: grid;
@@ -913,25 +941,28 @@
     .pillar-box {
       background: var(--bg-card);
       border-left: 3px solid var(--gold-main);
-      padding: 0.9rem 1rem;
+      padding: 0.95rem 1.05rem;
       border-radius: 0 10px 10px 0;
+      text-align: left;
     }
     .pillar-box strong {
       display: block;
       font-size: 0.88rem;
       color: var(--gold-light);
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
     .pillar-box span {
       font-size: 0.81rem;
       color: var(--text-muted);
+      line-height: 1.45;
+      display: block;
     }
 
     /* PLANES / SERVICIOS */
     .plans-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
+      gap: 2.2rem;
       max-width: 1020px;
       margin: 0 auto 3.2rem;
       align-items: stretch;
@@ -963,19 +994,19 @@
       background: var(--gold-gradient);
       color: #050c16;
       font-family: var(--font-heading);
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       font-weight: 900;
       padding: 0.32rem 1.1rem;
       border-radius: 999px;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       white-space: nowrap;
       box-shadow: 0 6px 18px rgba(212, 175, 55, 0.35);
     }
     .plan-num {
       color: var(--gold-main);
       font-family: var(--font-heading);
-      font-size: 0.76rem;
+      font-size: 0.75rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1.4px;
@@ -1000,16 +1031,17 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.95rem;
       margin-bottom: 1.6rem;
       flex-grow: 1;
     }
     .plan-features li {
       display: flex;
-      gap: 0.7rem;
+      gap: 0.75rem;
       align-items: flex-start;
       font-size: 0.91rem;
       color: var(--text-light);
+      line-height: 1.55;
     }
     .plan-features li .tick {
       color: var(--gold-light);
@@ -1019,26 +1051,27 @@
     .plan-notice {
       background: rgba(5, 12, 22, 0.65);
       border-left: 3px solid var(--gold-main);
-      padding: 0.8rem 0.95rem;
+      padding: 0.85rem 1rem;
       border-radius: 6px;
-      font-size: 0.79rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
       margin-bottom: 1.5rem;
+      line-height: 1.5;
     }
     .plan-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
-      min-height: 50px;
+      min-height: 52px;
       text-align: center;
       padding: 1rem 1.2rem;
-      border-radius: 10px;
+      border-radius: 11px;
       font-family: var(--font-heading);
       font-weight: 800;
       font-size: 0.9rem;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.7px;
       text-decoration: none;
       transition: all 0.2s;
     }
@@ -1060,48 +1093,40 @@
       background: rgba(212, 175, 55, 0.15);
     }
 
-    /* COMPARISON TABLE */
-    .swipe-hint {
-      display: none;
-      text-align: center;
-      font-size: 0.75rem;
-      color: var(--gold-light);
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-    }
+    /* COMPARISON TABLE (SIN DESBORDE EN CELULAR) */
     .comp-wrapper {
       max-width: 920px;
       margin: 0 auto;
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 16px;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
+      overflow: hidden;
+      width: 100%;
     }
     .comp-table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 520px;
     }
     .comp-table th, .comp-table td {
       padding: 0.95rem 1.1rem;
       text-align: left;
       border-bottom: 1px solid var(--border-subtle);
       font-size: 0.88rem;
+      vertical-align: middle;
     }
     .comp-table th {
       background: rgba(5, 12, 22, 0.6);
       font-family: var(--font-heading);
       text-transform: uppercase;
-      font-size: 0.78rem;
-      letter-spacing: 0.8px;
+      font-size: 0.76rem;
+      letter-spacing: 0.7px;
       color: var(--gold-light);
     }
     .comp-table td.center, .comp-table th.center {
       text-align: center;
     }
 
-    /* PROCESO PASO A PASO (5 PASOS CON LLAMADA DE ADMISIÓN) */
+    /* PROCESO PASO A PASO (5 PASOS) */
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -1120,10 +1145,15 @@
       border-color: var(--border-gold);
       background: linear-gradient(180deg, rgba(212, 175, 55, 0.1) 0%, var(--bg-card) 100%);
     }
+    .step-head-inline {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .step-badge {
       width: 38px;
       height: 38px;
-      border-radius: 8px;
+      border-radius: 9px;
       background: var(--gold-gradient);
       color: #050c16;
       font-family: var(--font-heading);
@@ -1131,8 +1161,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 0.95rem;
+      margin-bottom: 0.9rem;
       font-size: 0.9rem;
+      flex-shrink: 0;
     }
     .step-card h4 {
       font-family: var(--font-heading);
@@ -1141,23 +1172,23 @@
       line-height: 1.25;
     }
     .step-card p {
-      font-size: 0.84rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    /* FAQS (SOLO SE ABREN AL HACER CLIC) */
+    /* FAQS */
     .faq-wrapper {
       max-width: 800px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 0.95rem;
     }
     .faq-item {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
       cursor: pointer;
       transition: border-color 0.2s;
@@ -1174,7 +1205,8 @@
       align-items: center;
       gap: 1rem;
       user-select: none;
-      min-height: 54px;
+      min-height: 56px;
+      line-height: 1.4;
     }
     .faq-answer {
       max-height: 0;
@@ -1182,16 +1214,17 @@
       padding: 0 1.35rem;
       color: var(--text-muted);
       font-size: 0.9rem;
+      line-height: 1.6;
       transition: max-height 0.32s ease, padding 0.32s ease;
     }
     .faq-item.faq-open .faq-answer {
-      max-height: 360px;
-      padding-bottom: 1.25rem;
+      max-height: 420px;
+      padding-bottom: 1.3rem;
     }
     .faq-toggle {
       color: var(--gold-light);
       font-weight: 900;
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       transition: transform 0.2s;
       flex-shrink: 0;
     }
@@ -1199,46 +1232,48 @@
       transform: rotate(45deg);
     }
 
-    /* BANNER DE CIERRE FINAL (CTA PRE-FOOTER) */
+    /* BANNER DE CIERRE FINAL */
     .final-cta-box {
-      margin-top: 4rem;
+      margin-top: 3.8rem;
       background: linear-gradient(145deg, #112845 0%, #081526 100%);
       border: 1.5px solid var(--border-gold);
       border-radius: 22px;
-      padding: 3rem 2rem;
+      padding: 2.8rem 2rem;
       text-align: center;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55), 0 0 35px rgba(212, 175, 55, 0.12);
     }
     .final-cta-box h3 {
       font-family: var(--font-heading);
-      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
       font-weight: 900;
       text-transform: uppercase;
       margin-bottom: 0.75rem;
+      line-height: 1.2;
     }
     .final-cta-box p {
       color: var(--text-light);
       max-width: 620px;
       margin: 0 auto 1.8rem;
-      font-size: 0.98rem;
+      font-size: 0.96rem;
+      line-height: 1.6;
     }
 
     /* FLOATING WHATSAPP BUTTON */
     .wa-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
+      bottom: 18px;
+      right: 18px;
       z-index: 999;
       background: #25D366;
       color: #ffffff;
       padding: 0.8rem 1.25rem;
       border-radius: 999px;
       font-weight: 800;
-      font-size: 0.86rem;
+      font-size: 0.85rem;
       text-decoration: none;
       display: flex;
       align-items: center;
-      gap: 0.55rem;
+      gap: 0.5rem;
       box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
       transition: transform 0.2s;
     }
@@ -1249,12 +1284,13 @@
       width: 18px;
       height: 18px;
       fill: currentColor;
+      flex-shrink: 0;
     }
 
     /* FOOTER & POLÍTICAS LEGALES */
     footer {
       border-top: 1px solid var(--border-gold);
-      padding: 3.5rem 0 5rem;
+      padding: 3.5rem 0 5.5rem;
       background: #030810;
       text-align: center;
     }
@@ -1266,13 +1302,13 @@
     }
     .footer-socials {
       display: flex;
-      gap: 0.75rem;
+      gap: 0.7rem;
       flex-wrap: wrap;
       justify-content: center;
     }
     .footer-links {
       display: flex;
-      gap: 1.3rem;
+      gap: 1.2rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -1300,7 +1336,7 @@
     }
     .legal-links {
       display: flex;
-      gap: 1.2rem;
+      gap: 1.1rem;
       flex-wrap: wrap;
       justify-content: center;
     }
@@ -1322,7 +1358,7 @@
     .legal-disclaimer-text {
       color: #64748b;
       font-size: 0.74rem;
-      line-height: 1.5;
+      line-height: 1.55;
       max-width: 780px;
     }
 
@@ -1337,7 +1373,7 @@
       -webkit-backdrop-filter: blur(8px);
       align-items: center;
       justify-content: center;
-      padding: 1.25rem;
+      padding: 1.15rem;
     }
     .legal-modal-backdrop.open {
       display: flex;
@@ -1355,7 +1391,7 @@
       overflow: hidden;
     }
     .legal-modal-header {
-      padding: 1.25rem 1.5rem;
+      padding: 1.15rem 1.35rem;
       background: #081526;
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
@@ -1365,7 +1401,7 @@
     }
     .legal-modal-header h3 {
       font-family: var(--font-heading);
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--gold-light);
       text-transform: uppercase;
     }
@@ -1382,13 +1418,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    .legal-modal-close:hover {
-      border-color: var(--border-gold);
-      color: var(--gold-light);
+      flex-shrink: 0;
     }
     .legal-modal-body {
-      padding: 1.5rem;
+      padding: 1.35rem;
       overflow-y: auto;
       text-align: left;
       font-size: 0.88rem;
@@ -1404,9 +1437,9 @@
       margin-top: 0.3rem;
     }
 
-    /* ==========================================
-       MEDIA QUERIES: TABLETS & CELULARES
-       ========================================== */
+    /* ==========================================================
+       DISEÑO EXCLUSIVO PARA CELULARES (ESPACIADO Y DISTRIBUCIÓN PRO)
+       ========================================================== */
     @media (max-width: 1080px) {
       .steps-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -1428,17 +1461,22 @@
     }
 
     @media (max-width: 768px) {
-      section {
-        padding: 3.6rem 0;
+      .container {
+        padding: 0 1.15rem;
       }
-      .hero {
-        padding: 2.6rem 0 3.2rem;
+      section {
+        padding: 3.8rem 0;
+      }
+      .section-head {
+        margin-bottom: 2.2rem;
       }
       .topbar {
-        font-size: 0.68rem;
-        padding: 0.45rem 0.65rem;
+        font-size: 0.66rem;
+        padding: 0.5rem 0.75rem;
+        letter-spacing: 0.5px;
       }
 
+      /* Menú Desplegable Celular */
       .menu-toggle {
         display: flex;
       }
@@ -1457,88 +1495,225 @@
         overflow: hidden;
         opacity: 0;
         transition: max-height 0.35s ease, opacity 0.25s ease, padding 0.3s ease;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
       }
       nav.open {
-        max-height: 420px;
+        max-height: 440px;
         opacity: 1;
-        padding: 1rem 1.25rem 1.4rem;
+        padding: 0.8rem 1.25rem 1.4rem;
       }
       nav a {
-        padding: 0.9rem 0.5rem;
-        font-size: 0.98rem;
+        padding: 0.95rem 0.5rem;
+        font-size: 0.96rem;
         border-bottom: 1px solid var(--border-subtle);
         display: flex;
         align-items: center;
       }
       nav a.nav-cta {
-        margin-top: 0.85rem;
+        margin-top: 0.9rem;
         justify-content: center;
-        padding: 0.9rem;
+        padding: 0.95rem;
         border-bottom: none;
-        font-size: 0.92rem;
+        font-size: 0.9rem;
       }
 
-      .deliverables-mini-grid,
-      .steps-grid,
-      .about-pillars {
-        grid-template-columns: 1fr;
+      /* Hero Centrado y Aireado en Celular */
+      .hero {
+        padding: 2.4rem 0 3.4rem;
       }
-
+      .hero-grid {
+        gap: 2.4rem;
+        text-align: center;
+      }
+      .hero-pill {
+        font-size: 0.67rem;
+        padding: 0.4rem 0.85rem;
+        margin-bottom: 1rem;
+      }
+      .hero h1 {
+        font-size: 1.82rem;
+        line-height: 1.18;
+        margin-bottom: 1rem;
+      }
+      .hero p.lead {
+        font-size: 0.95rem;
+        margin: 0 auto 1.75rem;
+        line-height: 1.6;
+      }
       .hero-btns {
         flex-direction: column;
         width: 100%;
+        gap: 0.8rem;
+        margin-bottom: 1.8rem;
       }
       .btn-gold, .btn-outline {
         width: 100%;
       }
 
+      /* Estadísticas en 3 tarjetas limpias */
       .hero-stats {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        background: rgba(13, 31, 54, 0.5);
-        padding: 1rem;
-        border-radius: 12px;
-        border: 1px solid var(--border-subtle);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.55rem;
+        padding-top: 0;
+        border-top: none;
       }
       .stat-box {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-bottom: 0.5rem;
+        background: rgba(13, 31, 54, 0.65);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
+        padding: 0.75rem 0.35rem;
+        text-align: center;
       }
-      .stat-box:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
+      .stat-box strong {
+        font-size: 0.92rem;
+        margin-bottom: 0.15rem;
+      }
+      .stat-box span {
+        font-size: 0.65rem;
+        line-height: 1.25;
       }
 
-      .vs-card, .mockup-panel, .plan-card, .step-card, .final-cta-box {
-        padding: 1.6rem 1.2rem;
+      /* Tarjeta Showcase del Hero en Celular */
+      .hero-showcase {
+        padding: 1.9rem 1.15rem 1.35rem;
+      }
+      .showcase-top-pill {
+        font-size: 0.6rem;
+        padding: 0.25rem 0.75rem;
+      }
+      .showcase-item {
+        padding: 0.75rem 0.8rem;
+      }
+      .showcase-item .left {
+        font-size: 0.8rem;
+        gap: 0.6rem;
+      }
+      .showcase-item .badge-mini {
+        font-size: 0.63rem;
+        padding: 0.18rem 0.45rem;
       }
 
+      /* Tarjetas y Grillas con buen aire */
+      .deliverables-mini-grid,
+      .steps-grid,
+      .about-pillars {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+      .vs-grid, .ecosystem-grid {
+        gap: 1.5rem;
+      }
+      .plans-grid {
+        gap: 2.2rem;
+      }
+      .vs-card, .mockup-panel, .plan-card, .deliv-card {
+        padding: 1.65rem 1.25rem;
+      }
+
+      /* Planilla Google Sheets adaptada al celular sin scroll lateral */
+      .sheets-table th.hide-mobile,
+      .sheets-table td.hide-mobile {
+        display: none;
+      }
+      .mobile-marks-sub {
+        display: block;
+      }
+      .sheets-table th, .sheets-table td {
+        padding: 0.65rem 0.6rem;
+      }
+
+      /* Librería de Ejecución en Celular */
       .lib-row {
         flex-direction: column;
         align-items: flex-start;
+        gap: 0.5rem;
       }
 
+      /* Sobre Mí en Celular */
+      .coach-frame {
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
       .coach-credentials-strip {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.4rem;
       }
-
+      .cred-badge {
+        padding: 0.5rem 0.25rem;
+      }
+      .cred-badge strong {
+        font-size: 0.64rem;
+      }
+      .cred-badge span {
+        font-size: 0.58rem;
+      }
+      .about-content {
+        text-align: center;
+      }
       .social-row {
         justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem;
+      }
+      .social-chip {
+        width: 100%;
+        padding: 0.6rem 0.5rem;
+        font-size: 0.78rem;
       }
 
-      .swipe-hint {
-        display: block;
+      /* Tabla Comparativa 100% visible en pantalla móvil */
+      .comp-table th, .comp-table td {
+        padding: 0.75rem 0.55rem;
+        font-size: 0.78rem;
+        line-height: 1.35;
+      }
+      .comp-table th {
+        font-size: 0.66rem;
+        letter-spacing: 0.3px;
+      }
+
+      /* Pasos en Celular (Número + Título en la misma línea) */
+      .step-card {
+        padding: 1.35rem 1.2rem;
+      }
+      .step-head-inline {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.8rem;
+        margin-bottom: 0.55rem;
+      }
+      .step-badge {
+        margin-bottom: 0;
+        width: 34px;
+        height: 34px;
+        font-size: 0.82rem;
+      }
+      .step-card h4 {
+        margin-bottom: 0;
+        font-size: 0.98rem;
+      }
+
+      /* FAQs y Cierre Final */
+      .faq-question {
+        padding: 1.05rem 1.1rem;
+        font-size: 0.88rem;
+      }
+      .faq-answer {
+        padding: 0 1.1rem;
+        font-size: 0.85rem;
+      }
+      .final-cta-box {
+        margin-top: 2.8rem;
+        padding: 2rem 1.25rem;
       }
 
       .wa-float {
         bottom: 14px;
         right: 14px;
-        padding: 0.7rem 1rem;
-        font-size: 0.8rem;
+        padding: 0.7rem 1.05rem;
+        font-size: 0.78rem;
       }
     }
   </style>
@@ -1608,21 +1783,22 @@
           <div class="hero-stats">
             <div class="stat-box">
               <strong>IFBB + IAF</strong>
-              <span>Doble Certificación Oficial</span>
+              <span>Doble Certificación</span>
             </div>
             <div class="stat-box">
               <strong>100% Medible</strong>
-              <span>Auditoría por RIR y Cargas</span>
+              <span>Control RIR y Cargas</span>
             </div>
             <div class="stat-box">
               <strong>Incluido</strong>
-              <span>Librería Técnica en Video</span>
+              <span>Librería en Video</span>
             </div>
           </div>
         </div>
 
         <!-- SHOWCASE CARD -->
         <div class="hero-showcase scroll-pop delay-1">
+          <div class="showcase-top-pill">Hipertrofia Inteligente • Ingeniería</div>
           <div class="showcase-logo-center">
             <img class="site-logo" src="logo.jpg" alt="AP Hipertrofia Inteligente">
             <svg class="logo-fallback ap-monogram-svg" style="display:none;" viewBox="0 0 300 140">
@@ -1637,7 +1813,7 @@
               <text x="50%" y="66%" text-anchor="middle" fill="url(#goldHero)" font-family="Montserrat, sans-serif" font-weight="900" font-size="84" letter-spacing="-3">AP</text>
               <text x="50%" y="92%" text-anchor="middle" fill="url(#goldHero)" font-family="Montserrat, sans-serif" font-weight="700" font-size="13" letter-spacing="3">HIPERTROFIA INTELIGENTE</text>
             </svg>
-            <span style="font-size: 0.82rem; color: var(--gold-light); font-weight: 700; margin-top: 0.2rem;">Ecosistema de Entrenamiento & Nutrición Aplicada</span>
+            <span style="font-size: 0.8rem; color: var(--gold-light); font-weight: 700; margin-top: 0.2rem;">Ecosistema de Entrenamiento & Nutrición Aplicada</span>
           </div>
 
           <div class="showcase-checklist">
@@ -1673,9 +1849,9 @@
                 <span class="icon-box">
                   <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
                 </span>
-                <span>Cálculo de Macros + Tabla de Equivalencias</span>
+                <span>Cálculo de Macros + Equivalencias</span>
               </div>
-              <span class="badge-mini">Nutrición Flexible</span>
+              <span class="badge-mini">Nutrición</span>
             </div>
           </div>
         </div>
@@ -1744,35 +1920,47 @@
                 <thead>
                   <tr>
                     <th>Ejercicio</th>
-                    <th>Sem. Anterior</th>
-                    <th>Hoy</th>
-                    <th>Auditoría</th>
+                    <th class="hide-mobile">Sem. Anterior</th>
+                    <th class="hide-mobile">Hoy</th>
+                    <th style="text-align: right;">Auditoría</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Press Inclinado Smith</strong></td>
-                    <td>70 kg × 8</td>
-                    <td>72.5 kg × 8</td>
-                    <td><span class="pill-green">▲ PROGRESÓ (+2.5kg)</span></td>
+                    <td>
+                      <strong>Press Inclinado Smith</strong>
+                      <span class="mobile-marks-sub">70 kg × 8 → <strong>72.5 kg × 8</strong></span>
+                    </td>
+                    <td class="hide-mobile">70 kg × 8</td>
+                    <td class="hide-mobile">72.5 kg × 8</td>
+                    <td style="text-align: right;"><span class="pill-green">▲ +2.5 kg</span></td>
                   </tr>
                   <tr>
-                    <td><strong>Sentadilla Hack 45°</strong></td>
-                    <td>110 kg × 7</td>
-                    <td>110 kg × 9</td>
-                    <td><span class="pill-green">▲ PROGRESÓ (+2 reps)</span></td>
+                    <td>
+                      <strong>Sentadilla Hack 45°</strong>
+                      <span class="mobile-marks-sub">110 kg × 7 → <strong>110 kg × 9</strong></span>
+                    </td>
+                    <td class="hide-mobile">110 kg × 7</td>
+                    <td class="hide-mobile">110 kg × 9</td>
+                    <td style="text-align: right;"><span class="pill-green">▲ +2 reps</span></td>
                   </tr>
                   <tr>
-                    <td><strong>Vuelos Laterales Polea</strong></td>
-                    <td>12.5 kg × 10</td>
-                    <td>12.5 kg × 11</td>
-                    <td><span class="pill-green">▲ PROGRESÓ (+1 rep)</span></td>
+                    <td>
+                      <strong>Vuelos Laterales Polea</strong>
+                      <span class="mobile-marks-sub">12.5 kg × 10 → <strong>12.5 kg × 11</strong></span>
+                    </td>
+                    <td class="hide-mobile">12.5 kg × 10</td>
+                    <td class="hide-mobile">12.5 kg × 11</td>
+                    <td style="text-align: right;"><span class="pill-green">▲ +1 rep</span></td>
                   </tr>
                   <tr>
-                    <td><strong>Curl Predicador Scott</strong></td>
-                    <td>35 kg × 9</td>
-                    <td>35 kg × 7</td>
-                    <td><span class="pill-red">▼ REVISAR FATIGA</span></td>
+                    <td>
+                      <strong>Curl Predicador Scott</strong>
+                      <span class="mobile-marks-sub">35 kg × 9 → <strong>35 kg × 7</strong></span>
+                    </td>
+                    <td class="hide-mobile">35 kg × 9</td>
+                    <td class="hide-mobile">35 kg × 7</td>
+                    <td style="text-align: right;"><span class="pill-red">▼ Revisar</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -1792,14 +1980,14 @@
             <div class="library-preview-box">
               <div class="lib-row">
                 <div>
-                  <span class="ex-name">01. Módulo Tren Superior (12 Ejercicios en Video)</span>
+                  <span class="ex-name">01. Módulo Tren Superior (12 Videos)</span>
                   <span class="ex-sub">Pectoral, Espalda, Deltoides, Tríceps, Bíceps y Core con foco biomecánico</span>
                 </div>
                 <span class="included-badge">✓ Incluido en tu Plan</span>
               </div>
               <div class="lib-row">
                 <div>
-                  <span class="ex-name">02. Módulo Tren Inferior (8 Ejercicios en Video)</span>
+                  <span class="ex-name">02. Módulo Tren Inferior (8 Videos)</span>
                   <span class="ex-sub">Patrones de sentadilla, bisagra (RDL), extensiones, aductores, glúteos y gemelos</span>
                 </div>
                 <span class="included-badge">✓ Incluido en tu Plan</span>
@@ -1843,29 +2031,29 @@
           <div class="coach-photo-placeholder">
             <img id="coachPhoto" src="perfil.jpg" alt="Augusto Abello - AP Hipertrofia Inteligente" class="coach-img">
             <div id="photoPlaceholderContent" style="display:flex; flex-direction:column; align-items:center;">
-              <img class="site-logo" src="logo.jpg" alt="AP Logo" style="max-width: 120px; border-radius: 12px; margin-bottom: 1rem; border: 1px solid var(--border-gold);">
-              <h4 style="font-family: var(--font-heading); font-size: 1.2rem; color: var(--gold-light);">AUGUSTO ABELLO</h4>
-              <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.3rem;">Preparador Físico & Fundador de AP Hipertrofia Inteligente</p>
+              <img class="site-logo" src="logo.jpg" alt="AP Logo" style="max-width: 115px; border-radius: 12px; margin-bottom: 0.9rem; border: 1px solid var(--border-gold);">
+              <h4 style="font-family: var(--font-heading); font-size: 1.15rem; color: var(--gold-light);">AUGUSTO ABELLO</h4>
+              <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Preparador Físico & Fundador de AP Hipertrofia Inteligente</p>
             </div>
           </div>
           <div class="coach-credentials-strip">
             <div class="cred-badge">
               <strong>IFBB ACADEMY</strong>
-              <span>Hipertrofia y Biomecánica</span>
+              <span>Hipertrofia</span>
             </div>
             <div class="cred-badge">
               <strong>IAF CERTIFIED</strong>
-              <span>Preparador Físico</span>
+              <span>Biomecánica</span>
             </div>
             <div class="cred-badge">
               <strong>ING. INDUSTRIAL</strong>
-              <span>Estudiante en UCA</span>
+              <span>UCA</span>
             </div>
           </div>
         </div>
 
         <div class="about-content scroll-pop delay-1">
-          <span class="eyebrow" style="color: var(--gold-main); font-size: 0.78rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase;">Sobre Mí & Filosofía</span>
+          <span class="eyebrow" style="color: var(--gold-main); font-size: 0.76rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; display:block; margin-bottom:0.4rem;">Sobre Mí & Filosofía</span>
           <h2>INGENIERÍA, BIOMECÁNICA Y <span class="gold-gradient-text">RESULTADOS MEDIBLES</span>.</h2>
           <p>Soy <strong>Augusto Abello</strong>, entrenador certificado internacionalmente por la <strong>IFBB (International Federation of Bodybuilding and Fitness)</strong> y la <strong>IAF (International Academy of Fitness)</strong> en Hipertrofia Muscular y Biomecánica Deportiva, y estudio <strong>Ingeniería Industrial en la Universidad Católica Argentina (UCA)</strong>.</p>
           <p>Creé <strong>AP • Hipertrofia Inteligente</strong> para llevar la mentalidad analítica e ingenieril al entrenamiento de fuerza. La mayoría de las personas que entrenan en el gimnasio desperdician esfuerzo por no tener un sistema medible: usan ejercicios que no se adaptan a su estructura ósea, no registran sus cargas y confunden terminar cansados con generar estímulo real.</p>
@@ -1957,14 +2145,13 @@
         </div>
 
         <!-- TABLA COMPARATIVA -->
-        <p class="swipe-hint">← Deslizá la tabla hacia los lados para comparar →</p>
         <div class="comp-wrapper scroll-pop">
           <table class="comp-table">
             <thead>
               <tr>
-                <th>Qué incluye cada servicio</th>
-                <th class="center">1. Plan a Medida</th>
-                <th class="center">2. Asesoría Online 1 a 1</th>
+                <th style="width: 52%;">Qué incluye cada servicio</th>
+                <th class="center" style="width: 24%;">1. Plan a Medida</th>
+                <th class="center" style="width: 24%;">2. Asesoría 1 a 1</th>
               </tr>
             </thead>
             <tbody>
@@ -1974,34 +2161,34 @@
                 <td class="center">✓</td>
               </tr>
               <tr>
-                <td>Librería de Ejecución Técnica con Videos (Upper & Lower)</td>
+                <td>Librería de Ejecución Técnica con Videos</td>
                 <td class="center">✓</td>
                 <td class="center">✓</td>
               </tr>
               <tr>
-                <td>PDF "Manual de Operaciones: Hipertrofia Inteligente"</td>
+                <td>PDF "Manual de Operaciones"</td>
                 <td class="center">✓</td>
                 <td class="center">✓</td>
               </tr>
               <tr>
-                <td>Cálculo de Calorías, Macros y Tabla de Equivalencias</td>
+                <td>Cálculo de Calorías, Macros y Equivalencias</td>
                 <td class="center">✓</td>
                 <td class="center">✓</td>
               </tr>
               <tr>
-                <td>Planilla con Semáforo Automático (Verde/Rojo) y Gráfico de Peso</td>
-                <td class="center" style="color: var(--text-muted);">Planilla Interactiva</td>
-                <td class="center" style="color: var(--gold-light); font-weight: 800;">✓ Automatizada Pro</td>
+                <td>Planilla con Semáforo Automático y Gráfico</td>
+                <td class="center" style="color: var(--text-muted); font-size:0.78rem;">Interactiva</td>
+                <td class="center" style="color: var(--gold-light); font-weight: 800; font-size:0.78rem;">✓ Auto Pro</td>
               </tr>
               <tr>
-                <td>Corrección de Técnica por Video (Análisis de Palancas y ROM)</td>
+                <td>Corrección de Técnica por Video</td>
                 <td class="center" style="color: var(--text-muted);">—</td>
-                <td class="center" style="color: var(--gold-light); font-weight: 800;">✓ Ilimitado</td>
+                <td class="center" style="color: var(--gold-light); font-weight: 800; font-size:0.78rem;">✓ Ilimitado</td>
               </tr>
               <tr>
-                <td>Soporte Diario por WhatsApp + Check-in Semanal + Ajustes Mensuales</td>
+                <td>WhatsApp Diario + Check-in Semanal</td>
                 <td class="center" style="color: var(--text-muted);">—</td>
-                <td class="center" style="color: var(--gold-light); font-weight: 800;">✓ Incluido</td>
+                <td class="center" style="color: var(--gold-light); font-weight: 800; font-size:0.78rem;">✓ Incluido</td>
               </tr>
             </tbody>
           </table>
@@ -2020,32 +2207,42 @@
 
         <div class="steps-grid">
           <div class="step-card scroll-pop">
-            <div class="step-badge">01</div>
-            <h4>Contacto Inicial</h4>
+            <div class="step-head-inline">
+              <div class="step-badge">01</div>
+              <h4>Contacto Inicial</h4>
+            </div>
             <p>Tocás el botón del plan elegido acá en la web y me escribís directo al WhatsApp con el mensaje predeterminado.</p>
           </div>
 
           <div class="step-card scroll-pop delay-1">
-            <div class="step-badge">02</div>
-            <h4>Formulario Inicial</h4>
+            <div class="step-head-inline">
+              <div class="step-badge">02</div>
+              <h4>Formulario Inicial</h4>
+            </div>
             <p>Completás una ficha técnica rápida con tus días disponibles, equipamiento de tu gimnasio, historial y objetivos.</p>
           </div>
 
           <div class="step-card highlight-step scroll-pop delay-2">
-            <div class="step-badge">03</div>
-            <h4>Llamada 1 a 1</h4>
+            <div class="step-head-inline">
+              <div class="step-badge">03</div>
+              <h4>Llamada 1 a 1</h4>
+            </div>
             <p>Agendamos una llamada donde charlamos todo lo importante, te explico lo que pensé y planifiqué para tu caso y vemos si encajamos para trabajar juntos.</p>
           </div>
 
           <div class="step-card scroll-pop delay-3">
-            <div class="step-badge">04</div>
-            <h4>Entrega del Sistema</h4>
+            <div class="step-head-inline">
+              <div class="step-badge">04</div>
+              <h4>Entrega del Sistema</h4>
+            </div>
             <p>Armo y te entrego tu planificación a medida, cálculo nutricional, Manual de Operaciones y la Librería de Ejecución Técnica.</p>
           </div>
 
           <div class="step-card scroll-pop delay-4">
-            <div class="step-badge">05</div>
-            <h4>Auditoría & Progresión</h4>
+            <div class="step-head-inline">
+              <div class="step-badge">05</div>
+              <h4>Auditoría & Progresión</h4>
+            </div>
             <p>Arrancás a entrenar registrando tus cargas. En la Asesoría 1 a 1 auditamos tus videos a diario y hacemos check-in semanal.</p>
           </div>
         </div>
@@ -2216,8 +2413,8 @@
           }
         });
       }, {
-        threshold: 0.14,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
       });
 
       popElements.forEach(el => popObserver.observe(el));
@@ -2232,23 +2429,10 @@
       });
     });
 
-    // 4. Detector inteligente de tu logo + Favicon automático en la pestaña
-    const svgFaviconFallback = "data:image/svg+xml," + encodeURIComponent(
-      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' +
-      '<rect width="100" height="100" rx="20" fill="#091728" stroke="#d4af37" stroke-width="5"/>' +
-      '<text x="50%" y="68%" text-anchor="middle" fill="#d4af37" font-family="Montserrat, Arial, sans-serif" font-weight="900" font-size="52">AP</text>' +
-      '</svg>'
-    );
-    const faviconEl = document.getElementById('dynamicFavicon');
+    // 4. Detector inteligente de tu logo adentro de la página
     const logoExtensions = ['logo.jpg', 'logo.png', 'logo.jpeg', 'Logo.jpg', 'Logo.png'];
-
-    document.querySelectorAll('.site-logo').forEach((img, index) => {
+    document.querySelectorAll('.site-logo').forEach((img) => {
       let attempt = 0;
-      img.onload = function() {
-        if (index === 0 && faviconEl) {
-          faviconEl.href = img.src;
-        }
-      };
       img.onerror = function() {
         attempt++;
         if (attempt < logoExtensions.length) {
@@ -2257,9 +2441,6 @@
           img.style.display = 'none';
           const fallback = img.parentElement.querySelector('.logo-fallback');
           if (fallback) fallback.style.display = 'block';
-          if (index === 0 && faviconEl) {
-            faviconEl.href = svgFaviconFallback;
-          }
         }
       };
     });
